@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.MemberMapper">
+	<!-- 로그인 처리 -->
+	<select id="login" resultType="com.spring.domain.AuthVO">
+		select userid,name from member where userid=#{userid} and password=#{password}
+	</select>
+<!-- userid와 일치하는 비밀번호 추출 -->
+<select id="getpassword" resultType="java.lang.String">
+	select password from member where userid=#{userid}
+</select>
+
+<!-- 비밀번호 수정 -->
+<update id="updatePwd">
+	update member set password=#{new_password} where userid=#{userid} <!-- sql문 외위기 -->  
+</update>
+<!-- 회원탈퇴 -->
+<delete id="deleteMember">
+	delete from member where userid=#{userid}
+</delete>
+</mapper>
