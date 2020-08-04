@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.RegisterMapper">
+	<insert id="register">
+		insert into member(userid,password,name,gender,email)
+		values(#{userid},#{password},#{name},#{gender},#{email})
+	</insert>
+	
+	<!-- 중복아이디 검사 -->
+	<select id="dupId" resultType="int">
+		select count(*) from member where userid=#{userid}
+	</select>
+</mapper>
