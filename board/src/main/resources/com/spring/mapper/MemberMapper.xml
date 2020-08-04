@@ -22,6 +22,8 @@
 		from spring_member mem left outer join spring_member_auth auth on mem.userid = auth.userid
 		where mem.userid = #{userid}
 	</select>
+	
+	
 </mapper>
 
 

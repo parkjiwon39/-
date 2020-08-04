@@ -1,4 +1,4 @@
---ÆÄÀÏ Ã·ºÎ
+--ï¿½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½
 create table spring_attach(
 	uuid varchar2(100) not null,
 	uploadPath varchar2(200) not null,
@@ -14,3 +14,4 @@ references spring_board(bno);
 select * from SPRING_ATTACH;
 
 select * from SPRING_ATTACH where uploadpath = to_char(sysdate-1,'yyyy\mm\dd');
+

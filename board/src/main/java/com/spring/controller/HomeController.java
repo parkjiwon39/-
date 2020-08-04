@@ -23,7 +23,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
-		log.info("board Ω√¿€");
+		log.info("board ");
 	
 		
 		return "home";
